@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+    - main
+    - release/*
+  pull_request:
+    branches:
+    - main
+    
+
+jobs:
+  my_first_job:
+  runs-on: ubuntu-22.04
+  name: deploy to statging
+    steps:
+      - name: Repo Visualizer
+        uses: githubocto/repo-visualizer@0.9.1
+        with: images/diagram.svg
+        output_file: 
+          excluded_paths: 
+          max_depth: 
+          commit_message: ""
+          should_push:
+          artifact_name: diagram
+          file_colors:
+          
